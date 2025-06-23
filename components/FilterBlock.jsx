@@ -100,14 +100,14 @@ export default function FilterBlock() {
         <div className="flex gap-2 lg:ml-2">
           <Button 
             onClick={applyFilters} 
-            className="bg-blue-600 text-white hover:bg-blue-700 px-3 py-2 h-9 flex-1 lg:flex-initial lg:px-4 text-sm"
+            className="bg-blue-600 text-white hover:bg-blue-700 px-3 py-2 h-9 flex-1 lg:flex-initial lg:px-4 text-sm cursor-pointer"
           >
             Apply Filters
           </Button>
           <Button 
             onClick={resetFilters} 
             variant="outline" 
-            className="px-2 py-2 h-9 flex items-center justify-center lg:px-3"
+            className="px-2 py-2 h-9 flex items-center justify-center lg:px-3 cursor-pointer"
           >
             <RotateCcw className="w-4 h-4" />
           </Button>

@@ -67,7 +67,7 @@ export default function DashboardPage() {
           <Button
             variant="outline"
             size="sm"
-            className="bg-blue-50 text-blue-600 hover:bg-blue-100 border-blue-200 flex items-center gap-1 px-2 py-1"
+            className="bg-blue-50 text-blue-600 hover:bg-blue-100 border-blue-200 flex items-center gap-1 px-2 py-1 cursor-pointer"
             onClick={() => alert(`View details for ${artist.name}`)}
           >
             <Eye className="w-4 h-4" />

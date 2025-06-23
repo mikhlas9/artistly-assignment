@@ -40,7 +40,7 @@ export default function ArtistCard({ artist }) {
         
         <Button
           variant="default"
-          className="w-full bg-blue-600 text-white hover:bg-blue-700 transition-colors h-9 text-sm font-medium"
+          className="w-full bg-blue-600 text-white hover:bg-blue-700 transition-colors h-9 text-sm font-medium cursor-pointer"
           onClick={() => alert(`Request quote for ${artist.name}`)}
         >
           Ask for Quote

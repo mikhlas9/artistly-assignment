@@ -274,7 +274,7 @@ export default function OnboardingPage() {
             <Button 
               type="submit" 
               onClick={handleSubmit(onSubmit)}
-              className="w-full md:w-auto px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg"
+              className="w-full md:w-auto px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg cursor-pointer"
             >
               Complete Registration
             </Button>
