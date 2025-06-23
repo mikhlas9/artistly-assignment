@@ -41,49 +41,47 @@ export default function OnboardingPage() {
 
   if (showSuccess) {
     return (
-      <div className="min-h-screen bg-white flex items-center justify-center p-4 pt-24">
-        <div className="bg-white rounded-lg shadow-md p-8 text-center max-w-md w-full border border-blue-100">
-          <div className="mx-auto w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-            <CheckCircle className="w-8 h-8 text-blue-600" />
+      <div className="min-h-screen bg-background flex items-center justify-center p-4 pt-24 text-text transition-colors duration-300">
+        <div className="bg-card rounded-lg shadow-md p-8 text-center max-w-md w-full border border-border dark:bg-card-dark dark:border-border-dark">
+          <div className="mx-auto w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4 dark:bg-gray-800">
+            <CheckCircle className="w-8 h-8 text-primary dark:text-blue-400" />
           </div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">Welcome Aboard!</h2>
-          <p className="text-gray-600 mb-6">Your artist profile has been successfully created.</p>
+          <h2 className="text-2xl font-bold text-gray-900 mb-2 dark:text-white">Welcome Aboard!</h2>
+          <p className="text-gray-600 mb-6 dark:text-gray-300">Your artist profile has been successfully created.</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-white py-8 px-4 pt-24">
+    <div className="min-h-screen bg-background py-8 px-4 pt-24 text-text transition-colors duration-300">
       <div className="container mx-auto max-w-3xl">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-blue-600 mb-4">
-            Become an Artist
-          </h1>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4 dark:text-blue-400">Become an Artist</h1>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto dark:text-gray-300">
             Join our community of talented artists
           </p>
         </div>
 
         <div className="space-y-8">
           {/* Personal Information Card */}
-          <div className="bg-white rounded-lg shadow-md p-6 border border-blue-100">
+          <div className="bg-card rounded-lg shadow-md p-6 border border-border dark:bg-card-dark dark:border-border-dark">
             <div className="flex items-center gap-3 mb-6">
-              <User className="w-5 h-5 text-blue-600" />
-              <h2 className="text-xl font-semibold text-gray-900">Personal Information</h2>
+              <User className="w-5 h-5 text-primary dark:text-blue-400" />
+              <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Personal Information</h2>
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {/* Name */}
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2 dark:text-gray-300">
                   Full Name *
                 </label>
                 <Input
                   id="name"
                   {...register('name', { required: 'Name is required' })}
-                  className="h-12"
+                  className="h-12 bg-white dark:bg-gray-800 dark:text-text"
                   placeholder="Enter your full name"
                 />
                 {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
@@ -91,15 +89,15 @@ export default function OnboardingPage() {
 
               {/* Location */}
               <div>
-                <label htmlFor="location" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="location" className="block text-sm font-medium text-gray-700 mb-2 dark:text-gray-300">
                   Location *
                 </label>
                 <div className="relative">
-                  <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                  <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5 dark:text-gray-500" />
                   <Input
                     id="location"
                     {...register('location', { required: 'Location is required' })}
-                    className="h-12 pl-11"
+                    className="h-12 pl-11 bg-white dark:bg-gray-800 dark:text-text"
                     placeholder="Enter your city"
                   />
                 </div>
@@ -108,18 +106,18 @@ export default function OnboardingPage() {
 
               {/* Bio */}
               <div className="lg:col-span-2">
-                <label htmlFor="bio" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="bio" className="block text-sm font-medium text-gray-700 mb-2 dark:text-gray-300">
                   Bio *
                 </label>
                 <div className="relative">
-                  <FileText className="absolute left-3 top-3 text-gray-400 w-5 h-5" />
+                  <FileText className="absolute left-3 top-3 text-gray-400 w-5 h-5 dark:text-gray-500" />
                   <Textarea
                     id="bio"
                     {...register('bio', { 
                       required: 'Bio is required', 
                       maxLength: { value: 500, message: 'Bio cannot exceed 500 characters' } 
                     })}
-                    className="min-h-24 pl-11"
+                    className="min-h-24 pl-11 bg-white dark:bg-gray-800 dark:text-text"
                     placeholder="Tell us about yourself..."
                   />
                 </div>
@@ -128,15 +126,15 @@ export default function OnboardingPage() {
 
               {/* Profile Image */}
               <div className="lg:col-span-2">
-                <label htmlFor="profileImage" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="profileImage" className="block text-sm font-medium text-gray-700 mb-2 dark:text-gray-300">
                   Profile Image
                 </label>
                 <Controller
                   name="profileImage"
                   control={control}
                   render={({ field }) => (
-                    <div className="border-2 border-dashed border-gray-200 rounded-lg p-6 text-center hover:border-blue-300 transition-colors">
-                      <Upload className="mx-auto w-8 h-8 text-gray-400 mb-2" />
+                    <div className="border-2 border-dashed border-border rounded-lg p-6 text-center hover:border-primary transition-colors dark:border-border-dark dark:hover:border-blue-400">
+                      <Upload className="mx-auto w-8 h-8 text-gray-400 mb-2 dark:text-gray-500" />
                       <input
                         id="profileImage"
                         type="file"
@@ -149,10 +147,10 @@ export default function OnboardingPage() {
                         }}
                       />
                       <label htmlFor="profileImage" className="cursor-pointer">
-                        <span className="text-sm text-gray-600">
+                        <span className="text-sm text-gray-600 dark:text-gray-300">
                           {fileName || 'Click to upload or drag and drop'}
                         </span>
-                        <p className="text-xs text-gray-400 mt-1">PNG, JPG up to 10MB</p>
+                        <p className="text-xs text-gray-400 mt-1 dark:text-gray-500">PNG, JPG up to 10MB</p>
                       </label>
                     </div>
                   )}
@@ -162,16 +160,16 @@ export default function OnboardingPage() {
           </div>
 
           {/* Professional Information Card */}
-          <div className="bg-white rounded-lg shadow-md p-6 border border-blue-100">
+          <div className="bg-card rounded-lg shadow-md p-6 border border-border dark:bg-card-dark dark:border-border-dark">
             <div className="flex items-center gap-3 mb-6">
-              <Briefcase className="w-5 h-5 text-blue-600" />
-              <h2 className="text-xl font-semibold text-gray-900">Professional Details</h2>
+              <Briefcase className="w-5 h-5 text-primary dark:text-blue-400" />
+              <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Professional Details</h2>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {/* Categories */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 mb-2 dark:text-gray-300">
                   Categories *
                 </label>
                 <Controller
@@ -191,8 +189,9 @@ export default function OnboardingPage() {
                                 : field.value.filter((val) => val !== category);
                               field.onChange(updated);
                             }}
+                            className="dark:border-gray-600 dark:bg-card-dark dark:checked:bg-primary dark:checked:border-primary"
                           />
-                          <label htmlFor={`category-${category}`} className="text-sm">
+                          <label htmlFor={`category-${category}`} className="text-sm dark:text-gray-300">
                             {category}
                           </label>
                         </div>
@@ -205,7 +204,7 @@ export default function OnboardingPage() {
 
               {/* Languages */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 mb-2 dark:text-gray-300">
                   Languages *
                 </label>
                 <Controller
@@ -225,8 +224,9 @@ export default function OnboardingPage() {
                                 : field.value.filter((val) => val !== language);
                               field.onChange(updated);
                             }}
+                            className="dark:border-gray-600 dark:bg-card-dark dark:checked:bg-primary dark:checked:border-primary"
                           />
-                          <label htmlFor={`language-${language}`} className="text-sm">
+                          <label htmlFor={`language-${language}`} className="text-sm dark:text-gray-300">
                             {language}
                           </label>
                         </div>
@@ -239,7 +239,7 @@ export default function OnboardingPage() {
 
               {/* Fee Range */}
               <div className="lg:col-span-2">
-                <label htmlFor="feeRange" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="feeRange" className="block text-sm font-medium text-gray-700 mb-2 dark:text-gray-300">
                   Fee Range *
                 </label>
                 <Controller
@@ -248,12 +248,12 @@ export default function OnboardingPage() {
                   rules={{ required: 'Fee range is required' }}
                   render={({ field }) => (
                     <div className="relative">
-                      <DollarSign className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                      <DollarSign className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5 dark:text-gray-500" />
                       <Select onValueChange={field.onChange} value={field.value}>
-                        <SelectTrigger className="h-12 pl-11">
+                        <SelectTrigger className="h-12 pl-11 bg-white dark:bg-gray-800 dark:text-text">
                           <SelectValue placeholder="Select your fee range" />
                         </SelectTrigger>
-                        <SelectContent>
+                        <SelectContent className="bg-card dark:bg-card-dark dark:text-text">
                           <SelectItem value="$400 - $800">$400 - $800</SelectItem>
                           <SelectItem value="$500 - $1000">$500 - $1000</SelectItem>
                           <SelectItem value="$800 - $1500">$800 - $1500</SelectItem>
@@ -274,11 +274,11 @@ export default function OnboardingPage() {
             <Button 
               type="submit" 
               onClick={handleSubmit(onSubmit)}
-              className="w-full md:w-auto px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg cursor-pointer"
+              className="w-full md:w-auto px-8 py-3 bg-primary hover:bg-blue-700 text-white font-semibold rounded-lg cursor-pointer dark:bg-blue-500 dark:hover:bg-blue-600"
             >
               Complete Registration
             </Button>
-            <p className="text-sm text-gray-600 mt-4">
+            <p className="text-sm text-gray-600 mt-4 dark:text-gray-300">
               By submitting, you agree to our Terms of Service
             </p>
           </div>

@@ -5,7 +5,7 @@ import FilterBlock from '../../components/FilterBlock';
 import ArtistCard from '../../components/ArtistCard';
 
 // Import static JSON data
-const artistsData = require('../../data/artists.json');
+import artistsData from '../../data/artists.json';
 
 export default function ArtistsPage() {
   const { loadArtists, filteredArtists } = useArtistContext();
@@ -16,8 +16,8 @@ export default function ArtistsPage() {
   }, []); // Empty dependency array to run once on mount
 
   return (
-    <div className="container mx-auto px-4 py-4 pt-24">
-      <h1 className="text-3xl font-bold text-blue-600 text-center mb-4">Find Artists</h1>
+    <div className="container mx-auto px-4 py-4 pt-24 bg-background text-text transition-colors duration-300">
+      <h1 className="text-3xl font-bold text-primary text-center mb-4 dark:text-blue-400">Find Artists</h1>
       <FilterBlock />
       
       {/* Reduced gap between filter and cards */}
@@ -27,9 +27,9 @@ export default function ArtistsPage() {
             <ArtistCard key={artist.id} artist={artist} />
           ))
         ) : (
-          <div className="text-center col-span-full text-gray-600 py-8">
+          <div className="text-center col-span-full text-gray-600 py-8 dark:text-gray-300">
             <p className="text-lg">No artists found matching your criteria.</p>
-            <p className="text-sm text-gray-500 mt-1">Try adjusting your filters</p>
+            <p className="text-sm text-gray-500 mt-1 dark:text-gray-400">Try adjusting your filters</p>
           </div>
         )}
       </div>

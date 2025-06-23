@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { ArtistProvider } from '@/context/ArtistContext';
+import { ThemeProvider } from '../context/ThemeContext';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -13,13 +14,17 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <ArtistProvider>
-          <Header />
-          <main className="min-h-screen">{children}</main>
-          <Footer />
-        </ArtistProvider>
+    <html lang="en" className={inter.className}>
+      <body>
+        <ThemeProvider>
+          <ArtistProvider>
+            <Header />
+            <main className="min-h-screen bg-background text-text transition-colors duration-300">
+              {children}
+            </main>
+            <Footer />
+          </ArtistProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
