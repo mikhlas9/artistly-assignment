@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "name": "Ava Smith",
+    "category": "Singer",
+    "priceRange": "$500 - $1000",
+    "location": "New York, NY",
+    "image": "https://www.shutterstock.com/image-photo/singer-holding-microphone-stand-performing-260nw-1039242106.jpg", 
+    "bio": "Versatile vocalist with a soulful style.",
+    "languages": ["English", "Spanish"],
+    "fee": 750
+  },
+  {
+    "id": 2,
+    "name": "Liam Jones",
+    "category": "DJ",
+    "priceRange": "$800 - $1500",
+    "location": "Los Angeles, CA",
+    "image": "https://t3.ftcdn.net/jpg/01/10/11/00/360_F_110110063_4kxHX5YKcqrKqFz9udsaqmjkTCoOhKHc.jpg", 
+    "bio": "High-energy DJ for all events.",
+    "languages": ["English"],
+    "fee": 1200
+  },
+  {
+    "id": 3,
+    "name": "Emma Brown",
+    "category": "Dancer",
+    "priceRange": "$400 - $800",
+    "location": "Chicago, IL",
+    "image": "https://static.vecteezy.com/system/resources/thumbnails/041/053/132/small/ai-generated-beautiful-ballerina-in-long-dress-dancing-ai-generative-free-photo.jpeg", 
+    "bio": "Professional contemporary dancer.",
+    "languages": ["English", "French"],
+    "fee": 600
+  },
+  {
+    "id": 4,
+    "name": "Noah Davis",
+    "category": "Speaker",
+    "priceRange": "$1000 - $2000",
+    "location": "Miami, FL",
+    "image": "https://www.shutterstock.com/image-photo/motivational-speaker-headset-performing-on-260nw-2191619627.jpg", 
+    "bio": "Motivational speaker and author.",
+    "languages": ["English"],
+    "fee": 1500
+  }
+]
